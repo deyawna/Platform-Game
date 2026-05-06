@@ -13,6 +13,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Behaviors.Bullet,
 		C3.Behaviors.wrap,
 		C3.Plugins.Audio,
+		C3.Plugins.Camera3D,
+		C3.Plugins.Mouse,
 		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Behaviors.Platform.Acts.FallThrough,
 		C3.Plugins.Keyboard.Cnds.IsKeyDown,
@@ -31,7 +33,9 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Plugins.Audio.Acts.Play,
 		C3.Behaviors.Platform.Cnds.OnStop,
-		C3.Plugins.Sprite.Acts.SetAnim
+		C3.Plugins.Sprite.Acts.SetAnim,
+		C3.Plugins.Mouse.Cnds.OnAnyClick,
+		C3.Plugins.System.Acts.GoToLayout
 	];
 };
 self.C3_JsPropNameTable = [
@@ -55,6 +59,9 @@ self.C3_JsPropNameTable = [
 	{Audio: 0},
 	{Key: 0},
 	{Door: 0},
+	{"3DCamera": 0},
+	{LoadingScreen: 0},
+	{Mouse: 0},
 	{keyCount: 0}
 ];
 
@@ -71,5 +78,8 @@ self.InstanceType = {
 	LavaTile: class extends self.ITiledBackgroundInstance {},
 	Audio: class extends self.IInstance {},
 	Key: class extends self.ISpriteInstance {},
-	Door: class extends self.ISpriteInstance {}
+	Door: class extends self.ISpriteInstance {},
+	_3DCamera: class extends self.IInstance {},
+	LoadingScreen: class extends self.ISpriteInstance {},
+	Mouse: class extends self.IInstance {}
 }
